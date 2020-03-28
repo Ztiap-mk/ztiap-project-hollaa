@@ -78,10 +78,8 @@ function showBox() {
     showBox();
   
     requestAnimationFrame(draw);
-  }
-  
+  }  
   requestAnimationFrame(draw);
-
 
 
 
