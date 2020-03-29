@@ -8,6 +8,19 @@ canvas.width=500;
 ctx.font = "30px Arial";
 ctx.fillText("Nasobilka", 10, 50);
 
+var mouseY=0;
+var mouseX=0;
+
+let BgImage=document.createElement('image');
+let image6 = new Image;
+BgImage=image6;
+BgImage.src='imgs/background.png'
+
+let menuImage=document.createElement('image');
+let image5 = new Image;
+menuImage=image5;
+menuImage.src='imgs/playGame.png'
+
 let image = document.createElement('image');
 let imgProp= new Image;
 image = imgProp;
@@ -53,6 +66,14 @@ function apple() {
   ctx.drawImage(appleImg,300,300,50,50);
 }
 
+function Menu(){
+  ctx.drawImage(menuImage, 0, 0, 500, 500);
+}
+
+function Bg(){
+  ctx.drawImage(BgImage, 0, 0, 500, 500);
+}
+
 function showBox() {
     ctx.fillStyle = '#000';
     ctx.drawImage(box.image,box.x + box.vx,box.y + box.vy);
@@ -67,8 +88,20 @@ function showBox() {
     }
   }
 
+  function init(){
+    Menu();
+    document.addEventListener('click', mouseClicked, false);
+  }
+
+  function playGame(){
+    
+  }
+
+
+
   function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
+    Bg();
     ctx.font='30pt Pixel';
     ctx.fillStyle = 'Black';
     ctx.fillText('Násobilka s hadíkom Edom',30,100);
@@ -76,10 +109,15 @@ function showBox() {
     apple();
     wpoint();
     showBox();
+   
+    // Menu();
   
     requestAnimationFrame(draw);
   }  
   requestAnimationFrame(draw);
 
+  function mouseClicked(e){
+  
+  }
 
 
